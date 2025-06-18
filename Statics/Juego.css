@@ -1,0 +1,90 @@
+body {
+    font-family: sans-serif;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.contenido {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.botones {
+    width: 200px;
+}
+
+header {
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+h1 {
+    color: #3498db;
+    font-size: 2.5rem;
+}
+
+.tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tab-btn {
+    padding: 15px 20px;
+    background-color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    color: #3498db;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.tab-content {
+    display: none;
+    background-color: #ffffff;
+    padding: 30px;
+    flex: 1;
+    min-height: 400px;
+}
+
+.tab-content.actual {
+    display: block;
+}
+
+.btn {
+    background-color: #3498db;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.resultado {
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+textarea {
+    min-height: 25px; /* Altura mínima adecuada */
+    width: 70%;
+}
+
+.resaltado {
+    background-color: #ffff00;
+    color: #000000;
+    font-weight: bold;
+}

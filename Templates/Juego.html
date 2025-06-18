@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Palabras</title>
+    <link rel="stylesheet" href="../Statics/Juego.css">
+</head>
+<body>
+
+        <header>
+            <h1>Juego de palabras</h1>
+        </header>
+
+    <div class="contenedor">
+
+        
+        
+        <div class="botones">
+
+            <div class="tabs">
+                <button class="tab-btn" id="contador">Contador</button>
+                <button class="tab-btn" id="buscador">Buscador</button>
+                <button class="tab-btn" id="acronimo">Acrónimo</button>
+            </div>
+
+        </div>
+
+        <div class="contenido">
+
+            <!-- Juego 1. Contador de Palabras. -->
+            <div class="tab-content actual" id="tab-contador">
+                <h2>Contador de Caracteres y Palabras</h2>
+                <form id="form-contador">
+                    <textarea id="texto-contador" placeholder="Escribe tu texto aquí"></textarea>
+                    <button type="submit" class="btn">Contar</button>
+                </form>
+
+                <div class="resultado" id="result-contador">
+                    <h3>Resultados de Contar</h3>
+                    <p>Carácteres (con espacios): <strong id="tot-caracteres">0</strong></p>
+                    <p>Carácteres (sin espacios): <strong id="notot-caracteres">0</strong></p>
+                    <p>Palabras: <strong id="tot-palabras">0</strong></p>
+                    <p>Palabra más larga: <strong id="larga-palabra">-</strong></p>
+                </div>
+            </div>
+
+            <!-- Juego 2. Buscador de Palabras. -->
+            <div class="tab-content" id="tab-buscador">
+                <h2>Buscador de Palabras en un Texto</h2>
+                <form id="form-buscador">
+                    <textarea id="texto-buscador" placeholder="Texto donde buscar"></textarea>
+                    <input type="text" id="buscar-palabra" placeholder="Palabra o frase a buscar">
+                    
+                    <button type="submit" class="btn">Buscar</button>
+                </form>
+
+                <div class="resultado" id="result-buscador">
+                    <h3>Texto con coincidencias</h3>
+                    <div id="result-texto"></div>
+                    <p>Apariciones encontradas: <strong id="apariciones">0</strong></p>
+                </div>
+            </div>
+
+            <!-- Juego 3. Generador de Acrónimos -->
+            <div class="tab-content" id="tab-acronimo">
+                <h2>Generador de Acrónimos</h2>            
+                <form id="form-acronimo">
+                    <input type="text" id="texto-acronimo" placeholder="Escribe una frase para convertir en acrónimo">
+                    <button type="submit" class="btn">Generar Acrónimo</button>
+                </form>
+                
+                <div class="resultado" id="result-acronimo">
+                    <h3>Resultado</h3>
+                    <i id="frase-original"></i>
+                    <br>
+                    <strong id="acronimo-generado"></strong>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="../Dynamics/JS/Juego.js"></script>
+</body>
+</html>

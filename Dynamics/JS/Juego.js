@@ -16,23 +16,30 @@ for (let i = 0; i < tabButtons.length; i++) {
 }
 
 //Juego 1. Contador de Palabras.
-document.getElementById("form-contador").addEventListener("submit", (e) => {
-    e.preventDefault();
+document.getElementById("form-contador").addEventListener("submit", (event) => {
+    event.preventDefault();
     const texto = document.getElementById("texto-contador").value.trim();
 
     document.getElementById("tot-caracteres").textContent = texto.length;
-    document.getElementById("notot-caracteres").textContent = texto.replace(/\s+/g, '').length;
+    document.getElementById("notot-caracteres").textContent = texto.split(' ').join('').length;
 
-    const palabras = texto.split(/\s+/);
+    const palabras = texto.split(' ');
     document.getElementById("tot-palabras").textContent = palabras.length;
 
-    let palabraLarga = "";
-    if (palabras.length > 0) {
-        palabraLarga = palabras.reduce((masLargo, comparaElem) => masLargo.length > comparaElem.length ? masLargo : comparaElem, "");
+    let palabraLarga = [];
+    let longitudMax= 0;
+    for (let i = 0; i < palabras.length; i++) {
+        if (palabras[i].length > longitudMax) {
+            longitudMax = palabras[i].length;
+        }
     }
-            
-    document.getElementById("larga-palabra").textContent = palabraLarga; 
-       
+    for (let j = 0; j < palabras.length; j++) {
+        if (palabras[j].length === longitudMax) {
+            palabraLarga.push(palabras[j]);
+        }
+    }
+
+    document.getElementById("larga-palabra").textContent = palabraLarga.join(', ');
     document.getElementById("result-contador").style.display = "block";
 });
 
@@ -100,7 +107,7 @@ function generarAcronimo() {
         return;
     }
 
-    let palabras = frase.split(/\s+/);
+    let palabras = frase.split(' ');
     let acronimo = "";
 
     for (const palabra of palabras) {

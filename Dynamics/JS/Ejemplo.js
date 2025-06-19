@@ -11,13 +11,8 @@ ejecutarBtn.addEventListener('click', function() {
     try {
         const resultado = eval(`"${texto}".${metodo}`);
         resultPantalla.innerHTML += `Resultado: ${resultado}`;
-    } catch (error) {
+    } 
+    catch (error) {
         resultPantalla.innerHTML += `Error: ${error.message}`;    
-    }
-});
-
-metodoInput.addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-        ejecutarBtn.click();
     }
 });
